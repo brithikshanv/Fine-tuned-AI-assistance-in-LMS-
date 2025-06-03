@@ -1,85 +1,119 @@
-# Fine-Tuned AI Support System for Learning Platform
+# 🎓 AI-Powered Learning Support System
 
-This repository contains the implementation of a fine-tuned AI model designed to serve as a support system within an educational platform. Developed as part of a final-year engineering project, this solution enhances the learning experience by providing intelligent, contextual assistance to users.
+An intelligent, fine-tuned AI-based academic assistant that integrates seamlessly with modern learning platforms to deliver **real-time**, **personalized**, and **context-aware** educational support to students.
 
-## 🔍 Project Overview
+## 🚀 Overview
 
-The goal of this project is to leverage fine-tuned AI models (based on pre-trained transformers like GPT or BERT) to:
+This project implements a **fine-tuned GPT-based AI model** trained on subject-specific educational data to deliver instant academic support within a digital learning platform. The system empowers students through AI-driven tutoring, smart assessments, and adaptive learning recommendations—bridging the gaps in traditional and online education.
 
-* Answer subject-related queries.
-* Provide real-time tutoring support.
-* Personalize learning recommendations.
-* Offer a conversational interface for learners.
+## ✨ Key Features
 
-## 👨‍💻 Team Members
+* 💬 **AI Chat Assistant** – Real-time query resolution using a fine-tuned GPT model
+* 📚 **Concept Explanations** – Personalized and subject-aware answers
+* 🧠 **Contextual NLP Processing** – Enhances the relevance and clarity of responses
+* 📈 **Adaptive Learning Paths** – Tailors content based on user performance
+* 🔐 **Role-Based Access** – Secure and customizable dashboards for students, admins, and instructors
+* ⚙️ **Admin Tools** – Course/cohort creation, team management, progress tracking
+* 🌍 **Multilingual Support (Prototype)** – Assistance available in Tamil and English
 
-* **Saran S V** – 962821104082
-* **Varsha Herolin A P** – 962821104101
-* **Abinanth S** – 962821104314
-* **Brithiksha N V** – 962821104704
+## 🧩 Tech Stack
 
-## 🏫 Institution
+| Layer      | Technology              |
+| ---------- | ----------------------- |
+| Frontend   | React.js                |
+| Backend    | FastAPI + Uvicorn       |
+| AI/ML      | OpenAI GPT (fine-tuned) |
+| Database   | SQLite / MySQL          |
+| Auth       | Google OAuth 2.0        |
+| Deployment | GitHub, Judge0 API      |
 
-**University College of Engineering, Nagercoil**
-**Anna University, Chennai - 600025**
-Bachelor of Engineering in Computer Science and Engineering
-**Project Completion: May 2025**
+## 🏗️ System Architecture
 
-## 📌 Features
+* **Frontend (React.js):** Responsive dashboard, real-time chat UI, task panel, and performance tracking.
+* **Backend (FastAPI):** Handles authentication, session management, and communication with the fine-tuned OpenAI model.
+* **AI Module:** Interprets and responds to student queries using a fine-tuned LLM trained on academic datasets.
+* **Database Layer:** Manages user data, tasks, quiz records, chat history, and performance logs.
 
-* Custom fine-tuning of transformer models for educational queries.
-* Backend integration for response generation.
-* Deployment-ready architecture for embedding in web platforms.
+## 🖼️ Demo Screenshots
 
-## 🧠 Technologies Used
+* Login with Google
+* AI chat interface (including support in Tamil)
+* Cohort creation and learner management
+* Quiz generation and real-time feedback
+* Personalized course dashboards
 
-* Python
-* Hugging Face Transformers
-* Flask (or FastAPI)
-* SQLite / MongoDB
-* HTML/CSS (for frontend interface)
+## 📦 Setup Instructions
 
-## 📁 Repository Structure (Example)
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/ai-learning-assistant.git
+cd ai-learning-assistant
+
+# 2. Set up the environment
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Add environment variables
+# Create a .env file with OpenAI_API_KEY, Judge0_API_KEY, DB_URL, and Google OAuth credentials
+
+# 5. Run the application
+uvicorn app.main:app --reload
+
+# 6. Access frontend via React dev server or deployment
+```
+
+## 📂 Folder Structure
 
 ```
-├── model/
-│   └── fine_tuned_model/
-├── app/
-│   ├── main.py
-│   └── utils.py
-├── data/
-│   └── training_data.json
-├── templates/
-│   └── index.html
+├── frontend/               # React.js UI
+│   └── components/
+├── backend/                # FastAPI backend
+│   ├── api/
+│   └── ai_engine/          # GPT-based query handler
+├── data/                   # Training datasets
+├── docs/                   # Project report, architecture diagrams
+├── .env
 ├── requirements.txt
 └── README.md
 ```
 
-## 🚀 How to Run the Project
+## 🧪 Sample Code (AI Interaction)
 
-1. Clone the repository:
+```python
+@router.post("/chat")
+async def ai_response_for_question(request: AIChatRequest):
+    if request.task_type == TaskType.QUIZ:
+        # Handle quiz-specific logic
+    elif request.task_type == TaskType.LEARNING_MATERIAL:
+        # Generate contextual feedback
+    # Call OpenAI API with refined prompt
+    response = openai.ChatCompletion.create(...)
+    return response
+```
 
-   ```bash
-   git clone https://github.com/your-username/fine-tuned-ai-support.git
-   cd fine-tuned-ai-support
-   ```
+## 🧠 Future Enhancements
 
-2. Create and activate a virtual environment:
+* 🗣️ Voice and multilingual input
+* 📊 Admin analytics dashboard
+* 🎮 Gamification: badges, streaks, leaderboards
+* 🤝 Collaborative whiteboards and group chat
+* 📱 Mobile app with offline mode
+* 🔁 Self-improving AI via feedback loops
 
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # For Windows: venv\Scripts\activate
-   ```
+## 📚 References
 
-3. Install the dependencies:
+Includes citations from IEEE, ITME, SLAAI, and other educational AI conferences (listed in `docs/references.pdf`).
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+## 👥 Team Memebers 
 
-4. Start the application:
+Developed by final-year students of **University College of Engineering, Nagercoil**
+Under the guidance of **Dr. T. Viveka**, Department of Computer Science & Engineering
 
-   ```bash
-   python app/main.py
-   ```
+* Saran S V
+* Varsha Herolin A P
+* Abinanth S
+* Brithiksha N V
 
